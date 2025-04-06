@@ -5,26 +5,26 @@ document.addEventListener('DOMContentLoaded', () => {
   // ハンバーガーメニューの開閉
   if (menuBtn && mobileMenu) {
     menuBtn.addEventListener('click', () => {
-      // ハンバーガーアイコンをXに変形
+      // ハンバーガーアイコン→Xに変形
       menuBtn.classList.toggle('open');
       
-      // スライドダウン/アップ用クラス切り替え
+      // スライドダウン/アップ
       mobileMenu.classList.toggle('show');
       
-      // hiddenクラスでdisplay:none;を制御
+      // hiddenクラスで display:none; の切り替え
       if (mobileMenu.classList.contains('hidden')) {
         mobileMenu.classList.remove('hidden');
       } else if (!mobileMenu.classList.contains('show')) {
-        // 閉じるときアニメ完了後に hidden を付与
+        // 閉じるアニメ終了後に hiddenを付与
         setTimeout(() => {
           mobileMenu.classList.add('hidden');
-        }, 400); 
+        }, 400);
       }
     });
   }
 });
 
-// スライドショー
+// ===== スライドショー =====
 let currentSlide = 0;
 const slideShow = () => {
   const slides = document.querySelectorAll('#slider .slide > div');
@@ -57,7 +57,7 @@ const slideShow = () => {
   // 初期表示
   moveSlide(0);
 
-  // 必要なら自動スライド
+  // 必要に応じて自動スライド
   // setInterval(() => {
   //   let nextSlide = (currentSlide + 1) % slides.length;
   //   moveSlide(nextSlide);
