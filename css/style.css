@@ -1,0 +1,123 @@
+/* Tailwindで提供されないカスタムスタイルや上書きしたいスタイルを定義 */
+
+/* -----------------------------
+   フォント & ベース
+----------------------------- */
+:root {
+  --main-red: #e60033; /* カスタムカラー */
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, .title-font {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* -----------------------------
+   アニメーション
+----------------------------- */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeInDown {
+  animation: fadeInDown 1s ease forwards;
+}
+
+/* -----------------------------
+   ヘッダー関連
+----------------------------- */
+/* nav-active: 現在表示中のページ用クラス */
+.nav-active {
+  position: relative;
+  color: var(--main-red);
+  font-weight: 700;
+}
+
+/* nav-active の下にアンダーライン演出 */
+.nav-active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--main-red);
+  animation: fadeInDown 0.5s ease;
+}
+
+/* PCナビゲーションのホバーをもう少し強調 */
+#navbarLinks a:hover {
+  color: var(--main-red);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+/* -----------------------------
+   ハンバーガーメニュー
+----------------------------- */
+.hamburger {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  outline: none; /* クリック時のフォーカス枠を消す */
+}
+
+.hamburger-line {
+  width: 24px;
+  height: 3px;
+  background-color: var(--main-red);
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+/* メニューが開いた時に .open を付与し、ラインをXに変形 */
+.hamburger.open .line-top {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.open .line-middle {
+  opacity: 0;
+}
+.hamburger.open .line-bottom {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* -----------------------------
+   モバイルメニューアニメーション
+----------------------------- */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+/* JSで .show を付与してスライドダウン */
+.mobile-menu.show {
+  max-height: 500px; /* 適宜大きめに確保 */
+}
+
+/* -----------------------------
+   その他
+----------------------------- */
+img:hover {
+  transition: box-shadow 0.3s ease;
+}
