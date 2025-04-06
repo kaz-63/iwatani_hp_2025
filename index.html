@@ -12,12 +12,15 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
   <!-- カスタムCSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <!-- カスタムスクリプト -->
+  <!-- スクリプト -->
   <script defer src="assets/js/script.js"></script>
 </head>
 <body class="relative">
@@ -34,7 +37,7 @@
 
         <!-- PC向けナビゲーション -->
         <nav class="hidden md:flex items-center space-x-6 font-medium" id="navbarLinks">
-          <!-- 現在のページ（トップページ）には nav-active を付与 -->
+          <!-- トップページなので nav-active を付与 -->
           <a href="index.html" class="hover:text-red-600 transition-colors nav-active">
             トップ
           </a>
@@ -52,7 +55,7 @@
           </a>
         </nav>
 
-        <!-- スマホ向けハンバーガー (3本ライン) -->
+        <!-- スマホ向けハンバーガーボタン -->
         <div class="md:hidden">
           <button id="menu-btn" class="hamburger">
             <span class="hamburger-line line-top"></span>
@@ -83,27 +86,53 @@
     </div>
   </header>
 
-  <!-- ===== ヒーローセクション ===== -->
-  <section 
-    class="relative flex items-center justify-center h-screen bg-center bg-cover bg-no-repeat"
-    style="background-image: url('assets/img/hero-bg.jpg');">
-    <!-- オーバーレイ -->
+  <!-- ===== ヒーローセクション（刷新） ===== -->
+  <!-- 
+    背景に hero-bg.jpg を敷きつつ、ガッツポーズ画像を右、
+    キャッチコピーやボタンを左に配置する例。
+  -->
+  <section
+    class="relative flex items-center justify-center min-h-screen bg-center bg-cover bg-no-repeat"
+    style="background-image: url('assets/img/hero-bg.jpg');"
+  >
+    <!-- オーバーレイ（軽いグラデーション） -->
     <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-black/10 to-black/40"></div>
 
-    <!-- コンテンツ -->
-    <div class="relative z-10 text-center px-4">
-      <h1 class="text-4xl md:text-6xl font-extrabold text-red-600 mb-4 animate-fadeInDown">
-        若さと元気で神戸を変える
-      </h1>
-      <p class="text-lg md:text-2xl text-white mb-6 animate-fadeInDown" style="animation-delay: 0.2s; animation-duration:1s;">
-        岩谷しげなり 公式ホームページ
-      </p>
-      <a href="policy.html" 
-         class="inline-block bg-red-600 text-white px-8 py-3 rounded-full shadow-lg 
-                hover:bg-red-700 hover:shadow-2xl transition animate-fadeInDown"
-         style="animation-delay: 0.4s; animation-duration:1s;">
-        私の政策を見る
-      </a>
+    <!-- コンテンツ本体 -->
+    <div class="relative z-10 max-w-6xl mx-auto px-4 w-full flex flex-col md:flex-row items-center justify-between">
+      <!-- 左側：テキストコンテンツ -->
+      <div class="hero-text-box mb-8 md:mb-0 md:w-1/2 text-center md:text-left">
+        <h1
+          class="text-3xl md:text-5xl font-extrabold text-white mb-6 
+                 animate-heroText"
+        >
+          若さと元気で<br class="hidden md:block" />神戸を変える
+        </h1>
+        <p
+          class="text-lg md:text-2xl text-white mb-8 
+                 animate-heroTextDelay"
+        >
+          岩谷しげなり 公式サイトへようこそ
+        </p>
+        <a
+          href="policy.html"
+          class="inline-block bg-red-600 text-white px-8 py-3 rounded-full shadow-lg 
+                 hover:bg-red-700 hover:shadow-2xl transition
+                 animate-heroTextDelay2"
+        >
+          私の政策を見る
+        </a>
+      </div>
+      <!-- 右側：ガッツポーズ画像 -->
+      <div
+        class="md:w-1/2 flex justify-center hero-image-box animate-heroImage"
+      >
+        <img
+          src="assets/img/victory_pose_square.png"
+          alt="岩谷しげなり | ホームページ画像"
+          class="w-64 md:w-80 lg:w-96 drop-shadow-xl"
+        />
+      </div>
     </div>
   </section>
 
@@ -116,13 +145,25 @@
       <div class="slide flex transition-all duration-700">
         <!-- スライド画像 -->
         <div class="min-w-full">
-          <img src="assets/img/activity1.jpg" alt="岩谷しげなり | ホームページ画像" class="w-full h-64 object-cover" />
+          <img
+            src="assets/img/activity1.jpg"
+            alt="岩谷しげなり | ホームページ画像"
+            class="w-full h-64 object-cover"
+          />
         </div>
         <div class="min-w-full">
-          <img src="assets/img/activity2.jpg" alt="岩谷しげなり | ホームページ画像" class="w-full h-64 object-cover" />
+          <img
+            src="assets/img/activity2.jpg"
+            alt="岩谷しげなり | ホームページ画像"
+            class="w-full h-64 object-cover"
+          />
         </div>
         <div class="min-w-full">
-          <img src="assets/img/activity3.jpg" alt="岩谷しげなり | ホームページ画像" class="w-full h-64 object-cover" />
+          <img
+            src="assets/img/activity3.jpg"
+            alt="岩谷しげなり | ホームページ画像"
+            class="w-full h-64 object-cover"
+          />
         </div>
       </div>
       <!-- スライド制御ボタン -->
