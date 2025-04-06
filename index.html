@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>岩谷しげなり 公式サイト｜トップページ</title>
+  <meta name="description" content="神戸市会議員・弁護士 岩谷しげなりの公式サイトです。若さと元気を武器に、本音の政治を神戸から実現します。" />
+  <meta name="keywords" content="岩谷しげなり,神戸市会議員,弁護士,日本維新の会,政治,政策" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- カスタムCSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- カスタムスクリプト -->
+  <script defer src="assets/js/script.js"></script>
+</head>
+<body class="relative">
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="fixed w-full z-50">
+    <div class="backdrop-blur-sm bg-white/80 shadow-md">
+      <div class="max-w-7xl mx-auto flex items-center justify-between py-3 px-4">
+        
+        <!-- サイトロゴ・タイトル -->
+        <div class="text-2xl font-bold text-red-600 tracking-wider hover:opacity-80 transition-opacity">
+          <a href="index.html">岩谷しげなり</a>
+        </div>
+
+        <!-- PC向けナビゲーション -->
+        <nav class="hidden md:flex items-center space-x-6 font-medium" id="navbarLinks">
+          <!-- 現在のページ（トップページ）には nav-active を付与 -->
+          <a href="index.html" class="hover:text-red-600 transition-colors nav-active">
+            トップ
+          </a>
+          <a href="profile.html" class="hover:text-red-600 transition-colors">
+            プロフィール
+          </a>
+          <a href="greeting.html" class="hover:text-red-600 transition-colors">
+            あいさつ
+          </a>
+          <a href="policy.html" class="hover:text-red-600 transition-colors">
+            政策
+          </a>
+          <a href="support.html" class="hover:text-red-600 transition-colors">
+            支援のお願い
+          </a>
+        </nav>
+
+        <!-- スマホ向けハンバーガー (3本ライン) -->
+        <div class="md:hidden">
+          <button id="menu-btn" class="hamburger">
+            <span class="hamburger-line line-top"></span>
+            <span class="hamburger-line line-middle"></span>
+            <span class="hamburger-line line-bottom"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ドロワーメニュー（モバイル表示用） -->
+      <nav id="mobile-menu" class="mobile-menu hidden bg-white/90">
+        <a href="index.html" class="block px-4 py-2 border-b hover:bg-gray-100 nav-active">
+          トップ
+        </a>
+        <a href="profile.html" class="block px-4 py-2 border-b hover:bg-gray-100">
+          プロフィール
+        </a>
+        <a href="greeting.html" class="block px-4 py-2 border-b hover:bg-gray-100">
+          あいさつ
+        </a>
+        <a href="policy.html" class="block px-4 py-2 border-b hover:bg-gray-100">
+          政策
+        </a>
+        <a href="support.html" class="block px-4 py-2 border-b hover:bg-gray-100">
+          支援のお願い
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== ヒーローセクション ===== -->
+  <section 
+    class="relative flex items-center justify-center h-screen bg-center bg-cover bg-no-repeat"
+    style="background-image: url('assets/img/hero-bg.jpg');">
+    <!-- オーバーレイ -->
+    <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-black/10 to-black/40"></div>
+
+    <!-- コンテンツ -->
+    <div class="relative z-10 text-center px-4">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-red-600 mb-4 animate-fadeInDown">
+        若さと元気で神戸を変える
+      </h1>
+      <p class="text-lg md:text-2xl text-white mb-6 animate-fadeInDown" style="animation-delay: 0.2s; animation-duration:1s;">
+        岩谷しげなり 公式ホームページ
+      </p>
+      <a href="policy.html" 
+         class="inline-block bg-red-600 text-white px-8 py-3 rounded-full shadow-lg 
+                hover:bg-red-700 hover:shadow-2xl transition animate-fadeInDown"
+         style="animation-delay: 0.4s; animation-duration:1s;">
+        私の政策を見る
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== 活動スライドショー ===== -->
+  <main class="max-w-5xl mx-auto py-10 px-4">
+    <h2 class="text-3xl font-bold text-red-600 text-center mb-8 animate-fadeInDown">
+      活動の様子
+    </h2>
+    <div id="slider" class="relative overflow-hidden rounded-lg shadow-lg">
+      <div class="slide flex transition-all duration-700">
+        <!-- スライド画像 -->
+        <div class="min-w-full">
+          <img src="assets/img/activity1.jpg" alt="岩谷しげなり | ホームページ画像" class="w-full h-64 object-cover" />
+        </div>
+        <div class="min-w-full">
+          <img src="assets/img/activity2.jpg" alt="岩谷しげなり | ホームページ画像" class="w-full h-64 object-cover" />
+        </div>
+        <div class="min-w-full">
+          <img src="assets/img/activity3.jpg" alt="岩谷しげなり | ホームページ画像" class="w-full h-64 object-cover" />
+        </div>
+      </div>
+      <!-- スライド制御ボタン -->
+      <div class="flex justify-center space-x-2 mt-4">
+        <button class="slide-btn w-3 h-3 bg-gray-300 rounded-full"></button>
+        <button class="slide-btn w-3 h-3 bg-gray-300 rounded-full"></button>
+        <button class="slide-btn w-3 h-3 bg-gray-300 rounded-full"></button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== フッター ===== -->
+  <footer class="bg-gray-900 text-white py-8 mt-10">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="md:flex md:justify-between md:items-start">
+        <div class="mb-6 md:mb-0">
+          <h3 class="text-xl font-bold">岩谷しげなり事務所</h3>
+          <p class="text-sm mt-2 leading-relaxed">
+            〒652-0046 神戸市兵庫区上沢通1丁目3-2<br />
+            湊川公園パークハウス103号室<br />
+            TEL: 070-8939-9970<br />
+            メール: mail@s-iwatani.com
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold">所属：日本維新の会</h3>
+          <p class="text-sm mt-2 leading-relaxed">
+            （党本部または地域支部の住所・連絡先）<br />
+            例）〇〇市〇〇区〇〇〇-123 日本維新の会事務所<br />
+            TEL: 00-0000-0000
+          </p>
+        </div>
+      </div>
+      <div class="text-center mt-8 text-gray-400">
+        © 2023 岩谷しげなり 公式サイト
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
