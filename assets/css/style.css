@@ -1,10 +1,10 @@
-/* Tailwindで提供されないカスタムスタイルや上書きしたいスタイルを定義 */
+/* Tailwindで提供されないカスタムスタイルや上書きをまとめるファイル */
 
-/* -----------------------------
+/* -------------------------------------
    フォント & ベース
------------------------------ */
+-------------------------------------- */
 :root {
-  --main-red: #e60033; /* カスタムカラー */
+  --main-red: #e60033;
 }
 
 body {
@@ -18,9 +18,9 @@ h1, h2, h3, .title-font {
   font-family: 'Montserrat', sans-serif;
 }
 
-/* -----------------------------
-   アニメーション
------------------------------ */
+/* -------------------------------------
+   汎用アニメーション
+-------------------------------------- */
 @keyframes fadeInDown {
   0% {
     opacity: 0;
@@ -31,21 +31,72 @@ h1, h2, h3, .title-font {
     transform: translateY(0);
   }
 }
+
 .animate-fadeInDown {
   animation: fadeInDown 1s ease forwards;
 }
 
-/* -----------------------------
+/* 
+  追加のアニメーション
+  左右・上下などズレて登場、スケールインなど
+*/
+@keyframes heroTextIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes heroTextInDelay {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes heroImagePop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* ヒーローテキストのアニメーション用 */
+.animate-heroText {
+  animation: heroTextIn 1s ease-out forwards;
+}
+.animate-heroTextDelay {
+  animation: heroTextInDelay 1.2s ease-out forwards;
+}
+.animate-heroTextDelay2 {
+  animation: heroTextInDelay 1.4s ease-out forwards;
+}
+
+/* 画像側にインパクトを与える */
+.animate-heroImage {
+  animation: heroImagePop 1.3s ease-out forwards;
+}
+
+/* -------------------------------------
    ヘッダー関連
------------------------------ */
-/* nav-active: 現在表示中のページ用クラス */
+-------------------------------------- */
+/* 現在ページ用クラス */
 .nav-active {
   position: relative;
   color: var(--main-red);
   font-weight: 700;
 }
 
-/* nav-active の下にアンダーライン演出 */
 .nav-active::after {
   content: "";
   position: absolute;
@@ -57,16 +108,16 @@ h1, h2, h3, .title-font {
   animation: fadeInDown 0.5s ease;
 }
 
-/* PCナビゲーションのホバーをもう少し強調 */
+/* PCナビゲーションのホバー */
 #navbarLinks a:hover {
   color: var(--main-red);
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
-/* -----------------------------
+/* -------------------------------------
    ハンバーガーメニュー
------------------------------ */
+-------------------------------------- */
 .hamburger {
   position: relative;
   width: 40px;
@@ -78,7 +129,7 @@ h1, h2, h3, .title-font {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  outline: none; /* クリック時のフォーカス枠を消す */
+  outline: none;
 }
 
 .hamburger-line {
@@ -90,7 +141,6 @@ h1, h2, h3, .title-font {
   transition: all 0.4s ease;
 }
 
-/* メニューが開いた時に .open を付与し、ラインをXに変形 */
 .hamburger.open .line-top {
   transform: translateY(8px) rotate(45deg);
 }
@@ -101,23 +151,23 @@ h1, h2, h3, .title-font {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* -----------------------------
-   モバイルメニューアニメーション
------------------------------ */
+/* -------------------------------------
+   モバイルメニュー表示アニメーション
+-------------------------------------- */
 .mobile-menu {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease;
 }
-
-/* JSで .show を付与してスライドダウン */
 .mobile-menu.show {
-  max-height: 500px; /* 適宜大きめに確保 */
+  max-height: 600px; /* 適宜大きめに確保 */
 }
 
-/* -----------------------------
+/* -------------------------------------
    その他
------------------------------ */
+-------------------------------------- */
 img:hover {
   transition: box-shadow 0.3s ease;
 }
+
+/* 例：スライドショーや画像に追加でスタイルを当ててもOK */
